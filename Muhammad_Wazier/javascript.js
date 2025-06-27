@@ -628,10 +628,7 @@ const translations = {
     }
 };
 
-function changeLanguage(lang) {
-    document.getElementById("features").textContent = translations[lang].features;
-    // تحديث نصوص أخرى إن وجدت
-}
+
     // منع النسخ والقص
     document.addEventListener("copy", function (e) {
         e.preventDefault();
@@ -826,6 +823,8 @@ document
 // Language switching function
 function changeLanguage(lang) {
     currentLanguage = lang;
+    document.getElementById("features").textContent = translations[lang].features;
+
     updateContent();
     
 
@@ -839,6 +838,13 @@ function changeLanguage(lang) {
         document.documentElement.lang = lang;
         document.body.classList.remove("rtl");
     }
+     // 1. نبحث عن القائمة الخاصة بالموبايل
+     const mobileMenu = document.getElementById("mobile-menu");
+
+     // 2. نتأكد من وجودها وأنها ليست مخفية، ثم نضيف كلاس "hidden" لإغلاقها
+     if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+         mobileMenu.classList.add("hidden");
+     }
 }
 
 // Update all content based on current language
