@@ -655,13 +655,7 @@ function changeLanguage(lang) {
     });
 
 
-    // محاولة كشف أدوات المطور
-    setInterval(function () {
-        if (window.outerHeight - window.innerHeight > 100 || window.outerWidth - window.innerWidth > 100) {
-            document.body.innerHTML = '';
-            alert("لا تفتح أدوات المطور!");
-        }
-    }, 1000);
+
 
 
 
