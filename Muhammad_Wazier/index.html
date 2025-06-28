@@ -116,8 +116,8 @@
                 <p class="text-gray-600 text-lg mb-8">
                     Turning ideas into elegant solutions through code and design.
                 </p>
-                <a href="#portfolio"
-                    class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 inline-block">View
+                <a href="#portfolio" 
+                    class="normal-scroll bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 inline-block">View
                     My Work</a>
             </div>
             <div class="md:w-1/2 flex justify-center">
@@ -180,7 +180,7 @@
 
                     <div class="flex space-x-4">
                         <a href="#contact"
-                            class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 inline-block">Hire
+                            class="normal-scroll bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 inline-block">Hire
                             Me</a>
                         <!-- <a href="#"
                             class="border-2 border-gray-300 hover:border-green-500 text-gray-700 hover:text-green-600 font-semibold py-2 px-6 rounded-lg transition duration-300 inline-block">Download
@@ -592,7 +592,32 @@
 </div>
 
     <!-- JavaScript -->
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelectorAll('a.normal-scroll').forEach(link => {
+            link.addEventListener('click', function (e) {
+              e.preventDefault();
+              const targetId = this.getAttribute('href').substring(1);
+              const targetEl = document.getElementById(targetId);
+      
+              if (targetEl) {
+                // خصم ارتفاع الـ navbar الثابت (عدّله حسب حاجتك)
+                const offset = 10;
+                const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition + offset;
+      
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
+            });
+          });
+        });
+      </script>
+      
+      
+      
 </body>
 
 </html>
