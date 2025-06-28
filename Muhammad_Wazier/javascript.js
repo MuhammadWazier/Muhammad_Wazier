@@ -414,80 +414,39 @@ const languageData = {
             title: "Meine Dienstleistungen",
             items: [
                 {
-                    title: "Fitnessstudio-Verwaltungssystem",
-                    category: "Software",
-                    description: "Eine Desktop-Anwendung zur Verwaltung von Registrierungen und Abonnements.",
-                    promo: "Vereinfachen Sie den Betrieb Ihres Fitnessstudios mit einer intuitiven Softwarelösung.",
-                    features: [
-                        "Mitgliederverwaltung und Abo-Tracking",
-                        "Zahlungshistorie und Berichte",
-                        "Ablaufbenachrichtigungen",
-                        "Benutzerfreundliches Design"
-                    ],
+                    icon: "laptop-code",
+                    title: "Desktop-Software-Entwicklung",
+                    description: "Maßgeschneiderte Anwendungen für Ihre geschäftlichen Anforderungen.",
                 },
                 {
-                    title: "Persönliche Website",
-                    category: "Websites",
-                    description: "Eine Website für Fitness-Coaching und Ernährung.",
-                    promo: "Präsentieren Sie Ihre Fitnessmarke mit einer modernen Website.",
-                    features: [
-                        "Responsives Design für alle Geräte",
-                        "Abschnitte für Ernährung & Training",
-                        "Kontaktformular integriert",
-                        "Klares und professionelles Layout"
-                    ],
+                    icon: "globe",
+                    title: "Webdesign und -entwicklung",
+                    description: "Moderne Websites, die auf allen Geräten funktionieren.",
                 },
                 {
-                    title: "Buchcover-Designs",
-                    category: "Designs",
-                    description: "Eine Sammlung von Buch- und Magazincovern.",
-                    promo: "Auffällige Cover, die Ihre Publikationen hervorheben.",
-                    features: [
-                        "Individuelle Layouts je nach Genre",
-                        "Kreative Typografie und Illustrationen",
-                        "Druckfertige Dateien in hoher Qualität",
-                        "Ansprechende visuelle Konzepte"
-                    ],
+                    icon: "id-card",
+                    title: "Visitenkartendesign",
+                    description: "Professionelle Visitenkarten, die einen starken Eindruck hinterlassen.",
                 },
                 {
-                    title: "Unterrichtsmaterialien für Mathe, Englisch und Programmierung",
-                    category: "Unterrichten",
-                    description: "Arbeitsblätter und angepasste Lehrpläne für Algebra-Schüler.",
-                    promo: "Fördern Sie das Lernen mit effektiven Lehrmaterialien.",
-                    features: [
-                        "Ausdruckbare Arbeitsblätter",
-                        "Stufenweise Lerninhalte",
-                        "Visualisierte Erklärungen",
-                        "Anpassbare Pläne für Lehrer"
-                    ],
+                    icon: "book-open",
+                    title: "Buch- und Magazincover-Designs",
+                    description: "Auffällige Designs für Ihre Publikationen.",
                 },
                 {
-                    title: "Visitenkartensammlung",
-                    category: "Designs",
-                    description: "Moderne Visitenkarten für verschiedene Berufe.",
-                    promo: "Hinterlassen Sie einen bleibenden Eindruck mit stilvollen Visitenkarten.",
-                    features: [
-                        "Branchenübergreifende Designs",
-                        "Bereit für Druck und digital",
-                        "Professionelles, minimalistisches Layout",
-                        "Vielfältige Designoptionen"
-                    ],
+                    icon: "file-alt",
+                    title: "Lebenslaufgestaltung",
+                    description: "Heben Sie sich mit einem professionell gestalteten Lebenslauf ab.",
                 },
                 {
-                    title: "Persönliche Portfolio-Website",
-                    category: "Websites",
-                    description: "Eine Website zur Präsentation von IT-Dienstleistungen und Fähigkeiten.",
-                    promo: "Heben Sie Ihre Projekte und Fähigkeiten stilvoll hervor.",
-                    features: [
-                        "Animationen und weiche Übergänge",
-                        "Projektgalerie mit Filteroption",
-                        "Mehrsprachige Unterstützung",
-                        "Kontaktformular integriert"
-                    ],
-                }
-            ]
-            ,
-        },
+                    icon: "chalkboard-teacher",
+                    title: "Privatunterricht",
+                    description:
+                        "Einzelunterricht in Mathematik, Englisch, Programmierung und Computergrundlagen.",
+                },
+            ],
+        }
+        ,
         portfolio: {
             title: "Meine Arbeiten",
             viewDetails: "Details ansehen",
@@ -820,13 +779,24 @@ document
         }
     });
 
+    /**
+ * تبحث هذه الدالة عن قائمة الموبايل وتقوم بإغلاقها إذا كانت مفتوحة.
+ */
+function closeMobileMenu() {
+    // Close mobile menu if open
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (!mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.add("hidden");
+    }
+  }
+
 // Language switching function
 function changeLanguage(lang) {
     currentLanguage = lang;
     document.getElementById("features").textContent = translations[lang].features;
 
     updateContent();
-    
+
 
     // Update direction for RTL languages
     if (lang === "ar") {
@@ -838,13 +808,8 @@ function changeLanguage(lang) {
         document.documentElement.lang = lang;
         document.body.classList.remove("rtl");
     }
-     // 1. نبحث عن القائمة الخاصة بالموبايل
-     const mobileMenu = document.getElementById("mobile-menu");
+    closeMobileMenu();
 
-     // 2. نتأكد من وجودها وأنها ليست مخفية، ثم نضيف كلاس "hidden" لإغلاقها
-     if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-         mobileMenu.classList.add("hidden");
-     }
 }
 
 // Update all content based on current language
@@ -1064,4 +1029,4 @@ function validateForm() {
 
 
 // Initialize with English
-// changeLanguage("en");
+changeLanguage("en");
