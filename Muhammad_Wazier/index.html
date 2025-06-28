@@ -40,7 +40,7 @@
                 </div>
 
                 <!-- Mobile menu button -->
-                <div class="md:hidden" id="mobile-menu">
+                <div class="md:hidden" >
                     <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-600 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -60,16 +60,16 @@
 
                     <!-- Language Selector -->
                     <div class="flex gap-2">
-                        <button onclick="changeLanguage('en')"
-                            class="language-selector px-2 py-1 rounded hover:bg-gray-100">
+                        <button onclick="changeLanguage('en')" text-green-500
+                            class="language-selector px-2 py-1 rounded hover:bg-gray-100 text-green-500">
                             EN
                         </button>
-                        <button onclick="changeLanguage('ar')"
-                            class="language-selector px-2 py-1 rounded hover:bg-gray-100">
+                        <button onclick="changeLanguage('ar')" 
+                            class="language-selector px-2 py-1 rounded hover:bg-gray-100 text-green-500">
                             AR
                         </button>
                         <button onclick="changeLanguage('de')"
-                            class="language-selector px-2 py-1 rounded hover:bg-gray-100">
+                            class="language-selector px-2 py-1 rounded hover:bg-gray-100 text-green-500">
                             DE
                         </button>
                     </div>
@@ -77,7 +77,7 @@
             </div>
 
             <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+            <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
                 <a href="#home" class="block py-2 text-gray-800 hover:text-green-500">Home</a>
                 <a href="#about" class="block py-2 text-gray-800 hover:text-green-500">About</a>
                 <a href="#services" class="block py-2 text-gray-800 hover:text-green-500">Services</a>
@@ -85,17 +85,17 @@
                 <a href="#testimonials" class="block py-2 text-gray-800 hover:text-green-500">Testimonials</a>
                 <a href="#contact" class="block py-2 text-gray-800 hover:text-green-500">Contact</a>
 
-                <div class="flex gap-2 mt-4">
+                <div class="flex gap-2 mt-4"  >
                     <button onclick="changeLanguage('en')"
-                        class="language-selector px-2 py-1 rounded hover:bg-gray-100">
+                        class="language-selector px-2 py-1 rounded hover:bg-gray-100 text-green-500">
                         EN
                     </button>
                     <button onclick="changeLanguage('ar')"
-                        class="language-selector px-2 py-1 rounded hover:bg-gray-100">
+                        class="language-selector px-2 py-1 rounded hover:bg-gray-100 text-green-500">
                         AR
                     </button>
                     <button onclick="changeLanguage('de')"
-                        class="language-selector px-2 py-1 text-green-600 rounded hover:bg-gray-100">
+                        class="language-selector px-2 py-1 text-green-600 rounded hover:bg-gray-100 text-green-500">
                         DE
                     </button>
                 </div>
