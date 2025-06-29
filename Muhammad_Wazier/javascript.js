@@ -937,8 +937,18 @@ function changeLanguage(lang) {
 
 
     // My Skills title
-    document.querySelector("#skills-title").textContent =
-        currentLanguage === "ar" ? "مهاراتي" : "My Skills";
+   
+    if (currentLanguage === "ar") {
+        document.querySelector("#skills-title").textContent ="مهاراتي";
+        
+    } else if (currentLanguage === "en")  {
+        document.querySelector("#skills-title").textContent ="My Skills";
+
+    }
+    else {
+        document.querySelector("#skills-title").textContent ="Meine Fähigkeiten";
+
+    }
 
     // My Skills badges
     const skillsContainer = document.querySelector("#skills-title + div");
